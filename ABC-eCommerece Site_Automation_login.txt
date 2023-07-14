@@ -1,0 +1,35 @@
+package org.testng.annotations;
+import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+public class eCommerce {
+
+
+public static void main(string[] args)throws InterruptedException {
+ webDriver driver;
+System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+driver = new ChromeDriver();
+driver.massage().window().maximize();
+
+driver.get("https://wwww.ABC.com");
+Thread.sleep(2000);
+
+
+ driver.findElement(By.id("abc_email")).sendKeys("Ananad12345@gmail.com");  //consider valid email address
+    driver.findElement(By.id("abc_password")).sendKeys("Abc@123"); //consider valid password
+    driver.findElement(By.id("abc_loginButton")).click();
+
+    // Verify that the login was successful
+    String Actual = driver.findElement(By.id("welcome to ABC")).getText();
+String Expected = "welcome to AABC";
+    Assert.assertEquals(welcome TO ABC, "Welcome, User!");
+
+
+}
+
+
+}
